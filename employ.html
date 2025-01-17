@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Talent Bridge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            border-radius: 5px;
+        }
+        .error {
+            margin-top: 20px;
+            padding: 10px;
+            background: #ffebee;
+            border-left: 5px solid #f44336;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Job Recommendation System</h1>
+        <p>Enter your skills (e.g., "python, tensorflow, machine learning"):</p>
+        <textarea id="skillsInput" rows="5" placeholder="Enter your skills here..."></textarea>
+        <button id="getRecommendations">Get Recommendations</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        document.getElementById("getRecommendations").addEventListener("click", function () {
+            const skills = document.getElementById("skillsInput").value.trim();
+            const outputDiv = document.getElementById("output");
+
+            // Clear previous results
+            outputDiv.innerHTML = "";
+
+            if (!skills) {
+                outputDiv.innerHTML = '<div class="error">Please enter your skills!</div>';
+                return;
+            }
+
+            // Call the back-end API
+            fetch("http://127.0.0.1:5000/recommend", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ skills }),
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Error fetching recommendations");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    if (data.recommendations && data.recommendations.length > 0) {
+                        const recommendations = data.recommendations.map((job) => {
+                            const jobDetails = `<p><strong>Job Title:</strong> ${job.job_title}<br><strong>Similarity Score:</strong> ${(job.similarity_score * 100).toFixed(2)}%</p>`;
+                            if (job.job_title.toLowerCase().includes("python")) {
+                                return `${jobDetails} <a href="python_jobs.html">View More Python Jobs</a>`;
+                            } else if (job.job_title.toLowerCase().includes("data science")) {
+                                return `${jobDetails} <a href="data_science_jobs.html">View More Data Science Jobs</a>`;
+                            } else if (job.job_title.toLowerCase().includes("web development")) {
+                                return `${jobDetails} <a href="web_dev_jobs.html">View More Web Development Jobs</a>`;
+                            } else {
+                                return jobDetails;
+                            }
+                        }).join("");
+                        outputDiv.innerHTML = `<div class="results"><h3>Recommendations:</h3>${recommendations}</div>`;
+                    } else {
+                        outputDiv.innerHTML = '<div class="error">No recommendations found!</div>';
+                    }
+                })
+                .catch((error) => {
+                    outputDiv.innerHTML = `<div class="error">${error.message}</div>`;
+                });
+        });
+    </script>
+</body>
+</html>

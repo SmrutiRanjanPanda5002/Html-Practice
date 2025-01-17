@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Smruti Ranjan Panda</title>
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #0a3a2a, #152f40);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Background Video */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(60%);
+        }
+
+        /* Navbar Styling */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1em 0;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #48c78e;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 5em 1em 2em;
+            margin-top: 5em;
+        }
+
+        header img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin-top: 1.5em;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-top: 0.5em;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 2em;
+            margin: 2em auto;
+            width: 75%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            color: #48c78e;
+            border-bottom: 2px solid #48c78e;
+            display: inline-block;
+        }
+
+        section p {
+            line-height: 1.6;
+            font-size: 1em;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: space-between;
+        }
+
+        .flex-item {
+            flex: 1 1 calc(33.33% - 1em);
+            padding: 1.5em;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .flex-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .flex-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            color: #48c78e;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5em;
+            background: #011707;
+            color: #aaa;
+            font-size: 0.9em;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #48c78e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            section {
+                width: 90%;
+            }
+
+            .flex-container {
+                flex-direction: column;
+            }
+
+            .flex-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video class="video-background" autoplay loop muted>
+        <source src="path-to-your-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#qualifications">Qualifications</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home">
+        <img src="path-to-your-image.jpg" alt="Smruti Ranjan Panda">
+        <h1>Smruti Ranjan Panda</h1>
+        <p>Coding Learner | Student | Hackathon Enthusiast</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Welcome! I'm Smruti Ranjan Panda, a 2nd-year CS-IT student at Trident Academy of Technology, Bhubaneswar. Passionate about coding, hackathons, and personal growth, I aim to make the most of my college journey by excelling both academically and creatively.</p>
+    </section>
+
+    <!-- Qualifications Section -->
+    <section id="qualifications">
+        <h2>Qualifications</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>Higher Education</h3>
+                <p>Completed at Rajnagar High School, Rajnagar.</p>
+            </div>
+            <div class="flex-item">
+                <h3>Higher Secondary</h3>
+                <p>Completed at Kendrapada Autonomous College, Kendrapada.</p>
+            </div>
+            <div class="flex-item">
+                <h3>Current Education</h3>
+                <p>Currently pursuing a B.Tech in CS-IT at Trident Academy of Technology, Bhubaneswar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>Programming</h3>
+                <p>Proficient in HTML, CSS, JavaScript, and Databases.</p>
+            </div>
+            <div class="flex-item">
+                <h3>UI/UX</h3>
+                <p>Exploring UI/UX to advance into mobile OS development.</p>
+            </div>
+            <div class="flex-item">
+                <h3>Hackathons</h3>
+                <p>Active participant in hackathons such as SIH 2024 and MSME 2024.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>SIH 2024</h3>
+                <p>Participated at the college level in Smart India Hackathon.</p>
+            </div>
+            <div class="flex-item">
+                <h3>OS-CIT Certification</h3>
+                <p>Earned OS-CIT certification recognized by the Odisha government.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p><strong>Email:</strong> pandasm480@gmail.com</p>
+        <p><strong>Phone:</strong> 9861147161</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Smruti Ranjan Panda | <a href="#home">Back to Top</a></p>
+    </footer>
+</body>
+</html>

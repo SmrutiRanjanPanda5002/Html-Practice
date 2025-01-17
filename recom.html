@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Demo User - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Sour Gummy;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            color: #000000;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            min-height: 100vh;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: cover;
+            z-index: -1;
+            /* Places the video behind other content */
+        }
+
+        /* Apply Blur Effect */
+        .blur-effect {
+            backdrop-filter: blur(20px);
+            background: rgba(130, 130, 130, 0.3);
+            /* Semi-transparent white for effect */
+        }
+
+        /* Navbar Styling */
+        nav {
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+            margin-bottom: 30px;
+            box-shadow:black 0px 0px 40px 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1em;
+        }
+
+        nav ul li a {
+            color: #030303;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        nav ul li{
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        nav ul li:hover {
+            font-weight: bold;
+            text-decoration: underline;
+            transform: scale(1.1); 
+        }
+
+        /* Header Styling */
+        header {
+           display: flex;
+           flex-direction: row;
+           height: 400px;
+           box-shadow:black 0px 0px 40px 2px;
+        }
+
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        header h1 {
+            margin-top: 1em;
+            font-size: 2.5em;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 2em;
+            max-width: 1000px;
+            margin: 2em auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #000000;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5em;
+            margin-top: 40px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+        }
+        .s{
+            display: flex;
+            flex-direction: column;
+        }
+        .s1{
+            display: flex;
+            flex-direction: row;
+        }
+        section{
+    backdrop-filter: blur(20px);
+    background: rgba(145, 145, 145, 0.3);
+    height: 500px;
+    width: 100%;
+    margin-top: 30px;
+    box-shadow:black 0px 0px 40px 2px;
+    display: flex;
+    flex-direction: column;
+  }
+  section:hover{
+    transform: scale(1.1); 
+    box-shadow:black 0px 0px 40px 2px
+  }
+  .be1{
+    height: 100px;
+    width: 90%;
+    margin: 5px;
+    box-shadow:black 0px 0px 40px 2px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .be1:hover{
+    transform: scale(1.1); 
+    box-shadow:black 0px 0px 40px 2px;
+    background-color: rgba(3, 176, 3, 0.42);
+  }
+  .be1 h2{
+    margin-left: 10px;
+  }
+  .be1 p{
+    margin-left: 10px;
+  }
+    </style>
+</head>
+
+<body>
+    <!-- Video Background -->
+    <video class="video-background" autoplay loop muted playsinline>
+        <source src="C:\Users\dashs\Downloads\3864189-hd_1920_1080_25fps.mp4" type="video/mp4">
+        <source src="your-video.webm" type="video/webm">
+    </video>
+
+    <!-- Navigation -->
+    <nav class="blur-effect">
+        <span class="s">
+            <h1>Smruti Ranjan Panda</h1>
+            <span class="s1"><img class="i1" src="C:\Users\dashs\Downloads\icons8-phone-24.png"><b>+91
+                    9861147161</b></span>
+            <span class="s1"><img class="i1"
+                    src="C:\Users\dashs\Downloads\icons8-mail-24.png"><b>pandasm480@gmail.com</b></span>
+        </span>
+        <ul>
+            <li><a href="C:\Users\dashs\Downloads\html\pooo.html">About</a></li>
+            <li><a href="C:\Users\dashs\Downloads\html\skills.html">Skills</a></li>
+            <li><a href="C:\Users\dashs\Downloads\html\projects.html">Projects</a></li>
+            <li><a href="C:\Users\dashs\Downloads\html\recom.html">Recommendations</a></li>
+        </ul>
+    </nav>
+    <section id="achievements">
+        <h2 class="section-title">Recommendations</h2>
+        <div class="about1">
+          <div class="be1">
+            <h2>Sadashiv Padhy</h2>
+            <p>He is good student and perform well in all the web development labs and he can able to be a web developer.</p>
+          </div>
+          <div class="be1">
+            <h2>Ranjeep Kumar Pradhan</h2>
+            <p>He is good student and perform well.And he also tries to give her best in every situation.</p>
+          </div>
+          <div class="be1">
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
+          </div>
+        </div>
+    </section>
+    <footer class="blur-effect">
+        <p>© 2024 Smruti Ranjan Panda</p>
+    </footer>
+</body>
+
+</html>

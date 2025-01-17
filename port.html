@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)file:///C:/Users/HP/Desktop/Demo.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Demo User - Portfolio</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: cover;
+            z-index: -1;
+            /* Places the video behind other content */
+        }
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar Styling */
+        nav {
+            background: transparent;
+            backdrop-filter: blur(100px);
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0a3810;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* Header Section */
+        header {
+            background: transparent;
+            backdrop-filter: blur(1000px);
+            text-align: center;
+            padding: 2em 0;
+            color: #ffffff;
+            margin-top: 10px;
+            margin: 30px;
+            border-radius: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .name{
+            background: transparent;
+            backdrop-filter: blur(1000px);
+            margin-left: 4px;
+            padding: 2em 0;
+            color: #fff;
+            margin-top: 10px;
+            margin: 30px;
+            border-radius: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        header:hover{
+            transform: scale(1.1);        /* Slightly increase size */
+            box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        }
+
+        header img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        header img:hover{
+              transform: scale(1.1);        /* Slightly increase size */
+            box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.3); 
+        }
+
+        header h1 {
+            margin-top: 1em;
+            font-size: 2.5em;
+            color: #c3ffc4;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 2em;
+            width: 70%;
+            margin: 2em auto;
+            background: transparent;
+            backdrop-filter: blur(50px);
+            border-radius: 10px;
+            box-shadow: 0px 1px 20px 8px rgb(0 0 0 / 87%);
+        }
+        section h2{
+            
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #000000;
+            margin-bottom: 1em;
+            margin-left: 3px;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 0.5em;
+        }
+
+        /* Flexbox for Skills, Achievements, Contact */
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 1.5em;
+            justify-content: center;
+        }
+
+        .flex-item {
+            flex: 1 1 45%;
+            min-width: 280px;
+            background: transparent;
+            backdrop-filter: blur(1000px);
+            border:2px solid rgb(2, 36, 2);
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0px 1px 20px 8px rgb(0 0 0 / 87%);
+            transition: transform 0.3s;
+        }
+
+        .flex-item:hover {
+            transform: translateY(-5px);
+            background-color: #89fc8d;
+            color: black;
+        }
+
+        /* Achievements Section */
+        .achievement-item {
+            flex: 1 1 30%;
+            text-align: center;
+            padding: 1em;
+            background: transparent;
+            backdrop-filter: blur(1000px);
+            border-radius: 10px;
+            box-shadow: 0px 1px 20px 8px rgb(0 0 0 / 87%);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .achievement-item:hover {
+            background-color: #89fc8d;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        .achievement-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 0.5em;
+        }
+
+        .achievement-item h3 {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        /* Contact Links */
+        #contact a {
+            color: #b0f7b2;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 0.5em;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5em;
+            background-color: #011707;
+            color: white;
+            margin-top: auto;
+        }
+
+.main{
+    padding:0px;
+    margin: 30px;
+    height: auto;
+    width: auto;
+    background: transparent;
+    backdrop-filter: blur(1000px);
+    text-align: center;
+    padding: 2em 0;
+    color: #fff;
+    margin-top: 10px;
+    margin: 30px;
+    border-radius: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+        /* Media Queries for Smaller Screens */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .flex-item {
+                flex: 1 1 100%;
+            }
+
+            .achievement-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video class="video-background" autoplay loop muted playsinline>
+        <source src="C:\Users\dashs\Downloads\28752-371741435_medium.mp4" type="video/mp4">
+        <source src="your-video.webm" type="video/webm">
+    </video>
+<!-- Navigation -->
+<nav>
+    <ul>
+        <li><a href="file:///C:/Users/HP/Desktop/Demo.html#home">Home</a></li>
+        <li><a href="file:///C:/Users/HP/Desktop/Demo.html#about">About</a></li>
+        <li><a href="file:///C:/Users/HP/Desktop/Demo.html#qualifications">Qualifications</a></li>
+        <li><a href="file:///C:/Users/HP/Desktop/Demo.html#skills">Skills</a></li>
+        <li><a href="file:///C:/Users/HP/Desktop/Demo.html#projects">Projects</a></li>
+        <li><a href="file:///C:/Users/HP/Desktop/Demo.html#achievements">Achievements</a></li>
+        <li><a href="file:///C:/Users/HP/Desktop/Demo.html#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Header Section with Photo -->
+ <div class="main">
+<header id="home">
+    <img src="C:\Users\dashs\Downloads\WhatsApp Image 2024-10-30 at 19.43.20_ed80648b.jpg" alt="Mr Demo User Photo">
+</header>
+<div class="name">
+    <h1>Mr. Smruti Ranjan Panda</h1>
+    <p>Coding Learner | Student | Hackathon Enthusiast</p>
+</div></div>
+
+<!-- About Section -->
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>Hello,</p>
+    <p>I am Smruti Ranjan Panda. I am studing in Trident Academy Of Technology under B Tech. I am CS-IT branch student and I am now in 2nd year. I wish that I enjoy remaining years in this college in both academic and unacademic. </p>
+</section>
+
+<!-- Qualifications Section -->
+<section id="qualifications">
+    <h2 class="section-title">Qualifications</h2>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h3>Higher Education</h3>
+            <p>I completed my Higher Education from Rajnagar High school, Rajnagar </p>
+        </div>
+        <div class="flex-item">
+            <h3>Higher Secondary Education</h3>
+            <p>I completed my Higher Secondary Education from Kendrapada Autonomous college, Kendrapada</p>
+        </div>
+        <div class="flex-item">
+            <h3>curent Education</h3>
+            <p>Curently I am Studing in Trident Academy Of Technology, BBSR, Odisha</p>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h3>PROGRAMING LANGUAGE</h3>
+            <p>now I am studing HTML, CSS, JS and Data Base</p>
+        </div>
+        <div class="flex-item">
+            <h3>PROGRESS</h3>
+            <p>Also i am Studing about UI/UX to go in line of OS development for mobile devices</p>
+        </div>
+        <div class="flex-item">
+            <h3>HACKATHONS</h3>
+            <p>I the part of SIH 2024 and also submit my project in MSME 2024</p>
+        </div>
+    </div>
+</section>
+<!-- Achievements Section -->
+<section id="achievements">
+    <h2 class="section-title">Achievements</h2>
+    <div class="flex-container">
+        <div class="achievement-item">
+            <h3>SIH 2024</h3>
+            <p>Paticipate in SIH 2024 college level.</p>
+        </div>
+        <div class="achievement-item">
+            <h3>OS-CIT</h3>
+            <p>I have the OS-CIT certificate proposed by Odisha Govt.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Contact: 9861147161</p>
+    <p>Email: pandasm480@gmail.com</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2024 Simran Sahoo</p>
+</footer>
+</body></html>
